@@ -2,11 +2,12 @@ CGPA calculation Using Oracle 10g
 
 
 
---------------------CGPA----------------Calculation--------By------Harun----
+##--------------------CGPA----------------Calculation--------By------Harun----
 
+![CGPA Calculation Using Database Oracle 10g] (https://github.com/haruncse/CGPA-Calculation-Using-Oracle-10g/blob/master/CGPA_Calculation_Using_Oracle_10g.jpg)
 
-----------------------Student Information:---------------------
-
+##----------------------Student Information:---------------------
+``` SQL
 CREATE TABLE student_info(
  stid char(10) NOT NULL,
  sm_id varchar(6),
@@ -28,13 +29,10 @@ INSERT INTO student_info VALUES('10','2-2',3,3.5,1,4,4,4);
 
 SELECT * FROM student_info;
 
-TRUNCATE TABLE student_info;
+```
 
-DROP TABLE student_info;
-
-
--------------------------------Semester Information:-----------------------
-
+#-------------------------------Semester Information:-----------------------
+``` SQL
 CREATE TABLE semester_info(
  sm_id varchar(6),
  sb1 float,
@@ -64,13 +62,11 @@ INSERT INTO semester_info VALUES('4-2',3,1,1,3,2,3,14);
 
 SELECT * FROM semester_info;
 
-TRUNCATE TABLE semester_info;
+```
 
-DROP TABLE semester_info;
+#-------------------------------------CGPA Multiplear Table:-----------------------
 
-
--------------------------------------CGPA Multiplear Table:-----------------------
-
+``` SQL
 CREATE TABLE cmr(
 stid char(15),
 mlr float
@@ -79,13 +75,11 @@ mlr float
 
 SELECT * FROM cmr;
 
-TRUNCATE TABLE cmr;
+```
 
-DROP TABLE cmr;
+#-------------------------------------Result Table:---------------------------------
 
--------------------------------------Result Table:---------------------------------
-
-
+``` SQL
 CREATE TABLE student_result
 (
 Id varchar(10),
@@ -93,13 +87,10 @@ CGPA float
 );
 
 SELECT * FROM student_result;
+```
 
-TRUNCATE TABLE student_result;
-
-DROP TABLE student_result;
-
------------------------------Trigger Of Student table on Each Subject:--------------
-
+#-----------------------------Trigger Of Student table on Each Subject:--------------
+``` SQL
 CREATE OR REPLACE TRIGGER sb1_before_insert
 BEFORE INSERT
  ON student_info
@@ -208,11 +199,12 @@ insert into cmr values((:new.stid),(:new.sb6 * (vml)));
 
 END;
 /
+```
 
 
+#--------------------------Showing The Result-------------------------
 
---------------------------Showing The Result-------------------------
-
+``` SQL
 SELECT * FROM student_result;
 
 SELECT * FROM semester_info;
@@ -220,3 +212,4 @@ SELECT * FROM semester_info;
 SELECT * FROM student_info;
 
 SELECT * FROM cmr;
+```
