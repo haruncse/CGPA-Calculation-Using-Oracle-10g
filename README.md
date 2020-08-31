@@ -2,11 +2,11 @@ CGPA calculation Using Oracle 10g
 
 
 
-##--------------------CGPA----------------Calculation--------By------Harun----
+--------------------CGPA----------------Calculation--------By------Harun----
 
-![CGPA Calculation Using Database Oracle 10g] (https://github.com/haruncse/CGPA-Calculation-Using-Oracle-10g/blob/master/CGPA_Calculation_Using_Oracle_10g.jpg)
+![CGPA Calculation Using Database Oracle 10g](https://github.com/haruncse/CGPA-Calculation-Using-Oracle-10g/blob/master/CGPA_Calculation_Using_Oracle_10g.jpg)
 
-##----------------------Student Information:---------------------
+----------------------Student Information:---------------------
 ``` SQL
 CREATE TABLE student_info(
  stid char(10) NOT NULL,
@@ -30,8 +30,8 @@ INSERT INTO student_info VALUES('10','2-2',3,3.5,1,4,4,4);
 SELECT * FROM student_info;
 
 ```
+-------------------------------Semester Information:-----------------------
 
-#-------------------------------Semester Information:-----------------------
 ``` SQL
 CREATE TABLE semester_info(
  sm_id varchar(6),
@@ -64,7 +64,7 @@ SELECT * FROM semester_info;
 
 ```
 
-#-------------------------------------CGPA Multiplear Table:-----------------------
+-------------------------------------CGPA Multiplear Table:-----------------------
 
 ``` SQL
 CREATE TABLE cmr(
@@ -77,7 +77,7 @@ SELECT * FROM cmr;
 
 ```
 
-#-------------------------------------Result Table:---------------------------------
+-------------------------------------Result Table:---------------------------------
 
 ``` SQL
 CREATE TABLE student_result
@@ -89,7 +89,8 @@ CGPA float
 SELECT * FROM student_result;
 ```
 
-#-----------------------------Trigger Of Student table on Each Subject:--------------
+-----------------------------Trigger Of Student table on Each Subject:--------------
+
 ``` SQL
 CREATE OR REPLACE TRIGGER sb1_before_insert
 BEFORE INSERT
@@ -201,8 +202,7 @@ END;
 /
 ```
 
-
-#--------------------------Showing The Result-------------------------
+--------------------------Showing The Result-------------------------
 
 ``` SQL
 SELECT * FROM student_result;
